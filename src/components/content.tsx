@@ -1,7 +1,44 @@
-import React from "react";
+"use client";
+
+// ** Components
+import About from "./about";
+
+// ** Hooks
+import { useHash } from "@/hooks/useHash";
+
+// ** Library imports
+import { motion, AnimatePresence } from "framer-motion";
 
 const Content = () => {
-  return <div>content</div>;
+  const [hash] = useHash();
+
+  const renderSection = () => {
+    switch (hash) {
+      case "#about":
+        return <About />;
+      case "#resume":
+        return <>Resume</>;
+      case "#projects":
+        return <>Projects</>;
+      case "#contact":
+        return <>Contact</>;
+      default:
+        return <div>404 - Section Not Found</div>;
+    }
+  };
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={hash}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4 }}>
+        {renderSection()}
+      </motion.div>
+    </AnimatePresence>
+  );
 };
 
 export default Content;

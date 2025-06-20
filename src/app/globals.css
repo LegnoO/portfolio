@@ -1,7 +1,18 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-html *:is([class^="text-"], [class^="bg-"]):not(.text-sm, .text-xl) {
+html
+  *:is([class^="text-"], [class^="bg-"]):not(
+    .text-sm,
+    .text-xl,
+    .text-xs,
+    .text-lg,
+    .text-base,
+    .text-2xl,
+    .text-3xl,
+    .text-4xl,
+    .text-5xl
+  ) {
   @apply transition-colors;
 }
 
