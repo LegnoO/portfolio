@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
+// ** Components
+import CircleCursor from "@/components/effects/circle-cursor";
+import FlowLineBackground from "@/components/effects/flow-line-background";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -22,7 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
-        <main>{children}</main>
+        <main>
+          <FlowLineBackground />
+          <CircleCursor />
+
+          {children}
+        </main>
       </body>
     </html>
   );

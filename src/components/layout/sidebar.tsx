@@ -31,7 +31,7 @@ const Sidebar = () => {
               onClick={() => setHash(hashItems)}
               key={index}
               className={cn(
-                "border-border text-muted flex cursor-pointer flex-col items-center gap-1 border-b bg-gradient-to-r from-[#00000061] via-[#ffffff1c] bg-[length:200%_100%] bg-right-top px-1 py-4 transition-colors",
+                "bg-fade-gradient-left border-border flex cursor-pointer flex-col items-center gap-1 border-b px-1 py-4",
                 {
                   "text-primary": hash === `#${hashItems}`,
                 },

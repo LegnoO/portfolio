@@ -20,7 +20,7 @@ const Portfolio = () => {
           alt=""
         />
       </div>
-      <div className="border-border border border-t-0 px-6 pt-7 pb-5.5 text-center">
+      <div className="bg-fade-gradient-right hover-reverse-gradient-right border-border border border-t-0 px-6 pt-7 pb-5.5 text-center">
         <h3 className="text-4xl tracking-tight">Devon</h3>
         <p className="text-primary tracking-wide">Developer</p>
         <ul className="border-border flex items-center justify-center gap-4 border-b pt-8 pb-10">

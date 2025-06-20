@@ -19,7 +19,7 @@ const sizeMap = {
 
 const IconButton = ({ icon: Icon, size = "md" }: Props) => {
   return (
-    <button className="group to-[#00000061 text-muted flex size-[55px] cursor-pointer items-center justify-center rounded-full bg-gradient-to-l from-[#00000061] via-[#ffffff1c] bg-[length:200%_100%] bg-left-top transition-all duration-500 hover:bg-right-top">
+    <button className="group bg-fade-gradient-right hover-reverse-gradient-right text-muted flex size-[55px] cursor-pointer items-center justify-center rounded-full shadow-lg">
       {
         <Icon
           className={cn(

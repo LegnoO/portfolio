@@ -1,24 +1,25 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-html
-  *:is([class^="text-"], [class^="bg-"]):not(
-    .text-sm,
-    .text-xl,
-    .text-xs,
-    .text-lg,
-    .text-base,
-    .text-2xl,
-    .text-3xl,
-    .text-4xl,
-    .text-5xl
-  ) {
-  @apply transition-colors;
-}
-
 :root {
+  --theme-primary: rgb(115, 103, 240);
   --background: rgb(240, 241, 245);
   --foreground: rgb(15, 15, 15);
+  --muted: rgba(80, 80, 80, 0.5);
+  --border: rgba(0, 0, 0, 0.1);
+
+  /* ✨ Gợi ý nâng cao - gradient tái sử dụng */
+  --fade-gradient-right: linear-gradient(
+    to right,
+    #00000061,
+    #ffffff1c,
+    #00000061
+  );
+  --fade-gradient-left: linear-gradient(
+    268deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.14) 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,11 +27,11 @@ html
     --theme-primary: rgb(115, 103, 240);
     --background: rgb(15, 15, 15);
     --foreground: rgb(210, 210, 210);
-    --muted: rgba(var(--foreground), 0.65);
+    --muted: rgba(210, 210, 210, 0.65);
     --border: rgba(255, 255, 255, 0.16);
   }
 }
-/* background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.0509803922)) */
+
 @theme inline {
   --color-primary: var(--theme-primary);
   --color-muted: var(--muted);
@@ -44,9 +45,6 @@ html
   padding-inline: 0.75rem;
   margin-inline: auto;
 
-  @variant md {
-    max-width: 540px;
-  }
   @variant md {
     max-width: 720px;
   }
@@ -65,9 +63,28 @@ html
   border-radius: inherit;
 }
 
+.bg-fade-gradient-right {
+  transition: background-position 0.4s ease;
+  background-image: var(--fade-gradient-right);
+  background-size: 200% 100%;
+}
+
+.bg-fade-gradient-left {
+  transition: background-position 0.4s ease;
+  background-image: var(--fade-gradient-left);
+  background-size: 100% 200%;
+}
+
+.hover-reverse-gradient-right:hover {
+  background-position: right center;
+}
+
+.hover-reverse-gradient-left:hover {
+  background-position: left center;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  /* font-family: Arial, Helvetica, sans-serif; */
   font-family: var(--font-poppins);
 }

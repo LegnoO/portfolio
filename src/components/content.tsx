@@ -23,7 +23,7 @@ const Content = () => {
       case "#contact":
         return <>Contact</>;
       default:
-        return <div>404 - Section Not Found</div>;
+        return <About />;
     }
   };
 
