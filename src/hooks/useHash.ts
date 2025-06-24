@@ -18,7 +18,7 @@ export function useHash(): [HashSection, (value: HashSection) => void] {
 
   useEffect(() => {
     function updateHash() {
-      setHash(window.location.hash as HashSection);
+      if (window.location.hash) setHash(window.location.hash as HashSection);
     }
 
     updateHash();

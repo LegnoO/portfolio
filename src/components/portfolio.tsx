@@ -9,18 +9,18 @@ import { LinkedinIcon, FacebookIcon, GithubIcon } from "lucide-react";
 
 const Portfolio = () => {
   return (
-    <div className="border-border h-[1000px]">
+    <div className="border-border rounded pb-12">
       <div className="before:bg-primary relative overflow-hidden before:absolute before:bottom-[-50px] before:left-[-50px] before:size-[150px] before:rounded-full before:opacity-90 before:blur-[30px] before:content-['']">
         <Image
           height={200}
           width={300}
           priority
           className="pointer-events-none w-full rounded rounded-b-none"
-          src="https://html.hixstudio.net/heiko-prev/heiko/assets/img/author/thumb-3.jpg"
-          alt=""
+          src="/avatar.jpg"
+          alt="Ngô Minh Khôi Avatar"
         />
       </div>
-      <div className="bg-fade-gradient-right hover-reverse-gradient-right border-border border border-t-0 px-6 pt-7 pb-5.5 text-center">
+      <div className="bg-fade-gradient-right hover-reverse-gradient-right border-border rounded-b border border-t-0 px-6 pt-7 pb-5.5 text-center">
         <h3 className="text-4xl tracking-tight">Devon</h3>
         <p className="text-primary tracking-wide">Developer</p>
         <ul className="border-border flex items-center justify-center gap-4 border-b pt-8 pb-10">

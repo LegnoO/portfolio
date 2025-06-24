@@ -24,20 +24,20 @@ const Sidebar = () => {
   return (
     <div className="fixed h-screen w-[78px]">
       <ul className="border-border flex flex-col rounded border">
-        {menuItems.map((item, index) => {
-          const hashItems = item.label.toLowerCase() as HashSection;
+        {menuItems.map(({ icon, label }) => {
+          const hashItems = `#${label.toLowerCase()}` as HashSection;
           return (
             <li
               onClick={() => setHash(hashItems)}
-              key={index}
+              key={label}
               className={cn(
                 "bg-fade-gradient-left border-border flex cursor-pointer flex-col items-center gap-1 border-b px-1 py-4",
                 {
-                  "text-primary": hash === `#${hashItems}`,
+                  "text-primary": hash === hashItems,
                 },
               )}>
-              {item.icon}
-              <span className="text-xs">{item.label}</span>
+              {icon}
+              <span className="text-xs">{label}</span>
             </li>
           );
         })}

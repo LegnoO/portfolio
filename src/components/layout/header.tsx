@@ -13,7 +13,7 @@ const Header = () => {
             <li className="text-3xl">
               <a>Devon</a>
             </li>
-            <li className="">
+            <li>
               <IconButton icon={Sun} />
             </li>
           </ul>
