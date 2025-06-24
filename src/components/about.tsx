@@ -64,7 +64,7 @@ export default function About() {
   ];
 
   return (
-    <section className="pb-12" aria-labelledby=" about-heading">
+    <section className="pb-12" aria-labelledby="about">
       <div className={cn(cardContainerClass, "mb-6 font-medium")}>
         <h2
           id="about-heading"

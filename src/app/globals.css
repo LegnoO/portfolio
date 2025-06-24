@@ -2,29 +2,34 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Core theme colors */
   --theme-primary: rgb(115, 103, 240);
   --background: rgb(240, 241, 245);
   --foreground: rgb(15, 15, 15);
   --muted: rgba(80, 80, 80, 0.5);
   --border: rgba(0, 0, 0, 0.1);
 
-  /* ✨ Gợi ý nâng cao - gradient tái sử dụng */
+  /* Reusable gradients */
   --fade-gradient-right: linear-gradient(
     to right,
-    #00000061,
-    #ffffff1c,
-    #00000061
+    rgba(0, 0, 0, 0.38),
+    rgba(255, 255, 255, 0.11),
+    rgba(0, 0, 0, 0.38)
   );
   --fade-gradient-left: linear-gradient(
     268deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.14) 100%
   );
+  --fade-white: linear-gradient(
+    209deg,
+    rgba(255, 255, 255, 0.09) 0%,
+    rgba(255, 255, 255, 0.14) 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --theme-primary: rgb(115, 103, 240);
     --background: rgb(15, 15, 15);
     --foreground: rgb(210, 210, 210);
     --muted: rgba(210, 210, 210, 0.65);
@@ -59,22 +64,28 @@
   }
 }
 
-.rounded-inherit {
+/* Custom utilities */
+@utility rounded-inherit {
   border-radius: inherit;
 }
 
-.bg-fade-gradient-right {
-  transition: background-position 0.4s ease;
+@utility bg-fade-gradient-right {
   background-image: var(--fade-gradient-right);
   background-size: 200% 100%;
+  transition: background-position 0.4s ease;
 }
 
-.bg-fade-gradient-left {
-  transition: background-position 0.4s ease;
+@utility bg-fade-gradient-left {
   background-image: var(--fade-gradient-left);
   background-size: 100% 200%;
+  transition: background-position 0.4s ease;
 }
 
+@utility bg-fade-white {
+  background: var(--fade-white);
+}
+
+/* Custom hover classes */
 .hover-reverse-gradient-right:hover {
   background-position: right center;
 }
@@ -83,6 +94,7 @@
   background-position: left center;
 }
 
+/* Base styles */
 body {
   background: var(--background);
   color: var(--foreground);

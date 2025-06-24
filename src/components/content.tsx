@@ -2,6 +2,7 @@
 
 // ** Components
 import About from "./about";
+import Resume from "./resume";
 
 // ** Hooks
 import { useHash } from "@/hooks/useHash";
@@ -17,7 +18,7 @@ const Content = () => {
       case "#about":
         return <About />;
       case "#resume":
-        return <>Resume</>;
+        return <Resume />;
       case "#projects":
         return <>Projects</>;
       case "#contact":
