@@ -8,6 +8,11 @@
   --foreground: rgb(15, 15, 15);
   --muted: rgba(80, 80, 80, 0.5);
   --border: rgba(0, 0, 0, 0.1);
+  --paper: linear-gradient(
+    119deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.11) 100%
+  );
 
   --fade-gradient-right: linear-gradient(
     to right,
@@ -19,6 +24,13 @@
     268deg,
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 0.14) 100%
+  );
+
+  --card-fade-gradient-left: linear-gradient(
+    to right,
+    #ffffff0d,
+    #ffffff12,
+    #ffffff0d
   );
   --fade-white: linear-gradient(
     209deg,
@@ -48,6 +60,7 @@
   --color-border: var(--border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --font-poppins: var(--font-poppins);
 }
 
@@ -90,6 +103,16 @@
   background: var(--fade-white);
 }
 
+@utility bg-card-fade-gradient-left {
+  background: var(--card-fade-gradient-left);
+  background-size: 200% auto;
+  transition: background-position 0.4s ease;
+}
+
+.bg-card-fade-gradient-left:hover {
+  background-position: right center;
+}
+
 .overlay-caption::before {
   position: absolute;
   content: "";
@@ -109,21 +132,29 @@
   background-position: left center;
 }
 
-.underline-hover::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 2px;
-  background-color: currentColor;
-  transition: width 0.3s ease;
+.underline-hover {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
-.project-card:hover .underline-hover::after {
-  width: 100%;
+.paper-background {
+  background: var(--paper);
+  backdrop-filter: blur(40px);
 }
-
 /* Base styles */
 
 * {
