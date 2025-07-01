@@ -23,7 +23,7 @@ const Sidebar = () => {
 
   return (
     <div className="fixed h-screen w-[78px]">
-      <ul className="border-border flex flex-col rounded border">
+      <ul className="nav flex flex-col rounded">
         {menuItems.map(({ icon, label }) => {
           const hashItems = `#${label.toLowerCase()}` as HashSection;
           return (
@@ -31,7 +31,7 @@ const Sidebar = () => {
               onClick={() => setHash(hashItems)}
               key={label}
               className={cn(
-                "bg-fade-gradient-left border-border flex cursor-pointer flex-col items-center gap-1 border-b px-1 py-4",
+                "nav-items flex cursor-pointer flex-col items-center gap-1 px-1 py-4",
                 {
                   "text-primary": hash === hashItems,
                 },

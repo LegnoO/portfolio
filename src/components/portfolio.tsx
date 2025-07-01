@@ -45,7 +45,7 @@ const Portfolio = () => {
                 <IconButton icon={GithubIcon} />
               </li>
             </ul>
-            <button className="border-border hover:bg-foreground/10 mt-12 w-full cursor-pointer rounded border px-4 py-1.5 text-sm font-medium transition-colors">
+            <button className="shadow-emboss-light hover:bg-foreground/10 mt-12 w-full cursor-pointer rounded px-4 py-1.5 text-sm font-medium transition-colors">
               Download CV
             </button>
           </div>

@@ -5,6 +5,9 @@ import "./globals.css";
 // ** Components
 import FlowLineBackground from "@/components/effects/flow-line-background";
 
+// ** Context
+import ThemeContext from "@/context/theme-context";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],
@@ -28,7 +31,7 @@ export default function RootLayout({
         <main>
           <FlowLineBackground />
 
-          {children}
+          <ThemeContext>{children}</ThemeContext>
         </main>
       </body>
     </html>

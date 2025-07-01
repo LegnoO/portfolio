@@ -13,44 +13,178 @@
     rgba(255, 255, 255, 0.05) 0%,
     rgba(255, 255, 255, 0.11) 100%
   );
+}
+.dark {
+  .nav {
+    border: 1px solid var(--color-border);
+    box-shadow: none;
+    background: none;
+    .nav-items {
+      background: linear-gradient(
+        268deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.14) 100%
+      );
+      background-size: auto 200%;
+      &:not(:last-child)::after {
+        position: absolute;
 
-  --fade-gradient-right: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.38),
-    rgba(255, 255, 255, 0.11),
-    rgba(0, 0, 0, 0.38)
-  );
-  --fade-gradient-left: linear-gradient(
-    268deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.14) 100%
-  );
+        background: linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(255, 255, 255, 0.03) 100%
+        );
+        background-size: auto 200%;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+  .shadow-emboss-light {
+    box-shadow: none;
+    border: 1px solid var(--color-border);
+  }
+  .paper-background {
+    background: var(--paper);
+    backdrop-filter: blur(40px);
+  }
+  .bg-fade-white {
+    backdrop-filter: none;
+    box-shadow: none;
+    background: linear-gradient(
+      209deg,
+      rgba(255, 255, 255, 0.09) 0%,
+      rgba(255, 255, 255, 0.14) 100%
+    );
+  }
+  .bg-fade-gradient-right {
+    border: inherit;
+    backdrop-filter: none;
+    box-shadow: unset;
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.38),
+      rgba(255, 255, 255, 0.11),
+      rgba(0, 0, 0, 0.38)
+    );
+    background-size: 200% 100%;
+    transition: background-position 0.4s ease;
+  }
+  .bg-fade-gradient-left {
+    backdrop-filter: none;
+    box-shadow: unset;
+    background: linear-gradient(
+      268deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.14) 100%
+    );
+    background-size: 100% 200%;
+    transition: background-position 0.4s ease;
+  }
 
-  --card-fade-gradient-left: linear-gradient(
-    to right,
-    #ffffff0d,
-    #ffffff12,
-    #ffffff0d
-  );
-  --fade-white: linear-gradient(
-    209deg,
-    rgba(255, 255, 255, 0.09) 0%,
-    rgba(255, 255, 255, 0.14) 100%
-  );
+  .bg-card-fade-gradient-left {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(to right, #ffffff0d, #ffffff12, #ffffff0d);
+    background-size: 200% auto;
+    transition: background-position 0.4s ease;
+    backdrop-filter: none;
+    box-shadow: none;
+    &:hover {
+      background-position: right center;
+    }
+  }
 
-  --overlay-caption: linear-gradient(
-    180deg,
-    rgba(24, 24, 24, 0) 0%,
-    #181818 100%
-  );
+  --background: rgb(15, 15, 15);
+  --foreground: rgb(210, 210, 210);
+  --muted: rgba(210, 210, 210, 0.65);
+  --border: rgba(255, 255, 255, 0.16);
+}
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--muted) var(--background);
+}
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins);
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: rgb(15, 15, 15);
-    --foreground: rgb(210, 210, 210);
-    --muted: rgba(210, 210, 210, 0.65);
-    --border: rgba(255, 255, 255, 0.16);
+*::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.shadow-emboss-light {
+  box-shadow:
+    1px 1px 3px 0 rgba(174, 174, 192, 0.4),
+    -1px -1px 3px 0 #fff,
+    inset 0 0 0 0px rgba(255, 255, 255, 0.2);
+}
+
+.bg-fade-gradient-right {
+  box-shadow:
+    inset 9px 9px 6px 0 rgba(174, 174, 192, 0.2),
+    inset -6px -6px 6px 0 rgba(255, 255, 255, 0.7);
+  background: #f0f1f5;
+  backdrop-filter: blur(40px);
+  border: none;
+}
+
+.bg-fade-gradient-left {
+  box-shadow:
+    inset 9px 9px 6px 0 rgba(174, 174, 192, 0.2),
+    inset -6px -6px 6px 0 rgba(255, 255, 255, 0.7);
+  background: #f0f1f5;
+  backdrop-filter: blur(40px);
+  border: none;
+}
+
+.bg-fade-white,
+.bg-card-fade-gradient-left {
+  box-shadow:
+    inset 9px 9px 6px 0 rgba(174, 174, 192, 0.2),
+    inset -6px -6px 6px 0 rgba(255, 255, 255, 0.7);
+  background: #f0f1f5;
+  backdrop-filter: blur(40px);
+  border: none;
+}
+
+.paper-background {
+  background: var(--background);
+  backdrop-filter: none;
+}
+.nav {
+  border: none;
+  box-shadow:
+    inset 9px 9px 6px 0 rgba(174, 174, 192, 0.2),
+    inset -6px -6px 6px 0 rgba(255, 255, 255, 0.7);
+  background: linear-gradient(
+    253deg,
+    rgba(161, 161, 161, 0.14) 0%,
+    #f0f1f559 100%
+  );
+
+  .nav-items {
+    position: relative;
+    &:not(:last-child)::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+      transition: background-position 0.4s ease;
+    }
   }
 }
 
@@ -87,32 +221,6 @@
   border-radius: inherit;
 }
 
-@utility bg-fade-gradient-right {
-  background-image: var(--fade-gradient-right);
-  background-size: 200% 100%;
-  transition: background-position 0.4s ease;
-}
-
-@utility bg-fade-gradient-left {
-  background-image: var(--fade-gradient-left);
-  background-size: 100% 200%;
-  transition: background-position 0.4s ease;
-}
-
-@utility bg-fade-white {
-  background: var(--fade-white);
-}
-
-@utility bg-card-fade-gradient-left {
-  background: var(--card-fade-gradient-left);
-  background-size: 200% auto;
-  transition: background-position 0.4s ease;
-}
-
-.bg-card-fade-gradient-left:hover {
-  background-position: right center;
-}
-
 .overlay-caption::before {
   position: absolute;
   content: "";
@@ -120,16 +228,12 @@
   height: 100%;
   bottom: 0;
   left: 0;
-  background: var(--overlay-caption);
+  background: linear-gradient(180deg, rgba(24, 24, 24, 0) 0%, #181818 100%);
 }
 
 /* Custom hover classes */
 .hover-reverse-gradient-right:hover {
   background-position: right center;
-}
-
-.hover-reverse-gradient-left:hover {
-  background-position: left center;
 }
 
 .underline-hover {
@@ -151,30 +255,4 @@
   }
 }
 
-.paper-background {
-  background: var(--paper);
-  backdrop-filter: blur(40px);
-}
 /* Base styles */
-
-* {
-  scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--muted) var(--background);
-}
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-poppins);
-}
-
-/* Chrome, Edge, Safari */
-*::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-}
-
-*::-webkit-scrollbar-thumb {
-  border-radius: 0.5rem;
-  transition: background 0.3s ease;
-}
