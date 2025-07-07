@@ -74,7 +74,7 @@ export default function Resume() {
     isEducation = false,
   }: ResumeSectionProps) => {
     return (
-      <article className="bg-fade-gradient-right hover-reverse-gradient-right border-border w-full rounded-lg border p-6 transition-all duration-300">
+      <article className="bg-fade-primary hover-reverse-gradient-right border-border w-full rounded-lg border p-6 transition-all duration-300">
         <header className="mb-8">
           <h3 className="mb-2 text-xl font-semibold">{title}</h3>
           <hr className="border-border" aria-hidden="true" />
@@ -125,7 +125,7 @@ export default function Resume() {
                         : (item as WorkExperience).position}
                     </div>
                     {isEducation && (
-                      <div className="mt-0.5 text-xs">
+                      <div className="mt-0.5 text-xs font-medium">
                         {(item as Education).field}
                       </div>
                     )}

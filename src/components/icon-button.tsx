@@ -8,7 +8,7 @@ type Props = {
 
 const IconButton = ({ icon: Icon }: Props) => {
   return (
-    <button className="group bg-fade-gradient-right hover-reverse-gradient-right cursor-pointer rounded-full p-4 shadow-lg">
+    <button className="group bg-fade-primary hover-reverse-gradient-right cursor-pointer rounded-full p-4 shadow-lg">
       {
         <Icon className="text-muted group-hover:text-primary transition-colors duration-500" />
       }

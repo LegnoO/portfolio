@@ -3,7 +3,15 @@
 // ** React Imports
 import { useEffect, useRef } from "react";
 
+// ** Context
+import { useTheme } from "@/context/theme-context";
+
+// ** Hooks
+import useIsMounted from "@/hooks/useIsMounted";
+
 const FlowLineBackground = () => {
+  const { theme } = useTheme();
+  const isMounted = useIsMounted();
   const pathRef = useRef<SVGPathElement>(null);
   const animationRef = useRef<number>(null);
   const offsetRef = useRef(0);
@@ -35,6 +43,8 @@ const FlowLineBackground = () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, []);
+
+  if (isMounted && theme === "light") return null;
 
   return (
     <svg

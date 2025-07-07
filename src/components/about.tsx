@@ -16,7 +16,7 @@ type InfoCardProps = {
 };
 
 const cardContainerClass =
-  "bg-fade-gradient-right hover-reverse-gradient-right border-border rounded border p-10 font-medium";
+  "bg-fade-primary hover-reverse-gradient-right border-border rounded border p-10 font-medium";
 
 const InfoCard = ({ icon, label, value, description }: InfoCardProps) => (
   <div

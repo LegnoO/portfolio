@@ -29,9 +29,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
         <main>
-          <FlowLineBackground />
-
-          <ThemeContext>{children}</ThemeContext>
+          <ThemeContext>
+            <FlowLineBackground />
+            {children}
+          </ThemeContext>
         </main>
       </body>
     </html>

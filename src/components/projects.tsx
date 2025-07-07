@@ -40,7 +40,7 @@ type Project = {
 
 const Badge = ({ icon: BadgeIcon, title }: BadgeProps) => {
   return (
-    <div className="bg-fade-gradient-right flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-sm">
+    <div className="bg-fade-primary flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-sm">
       <BadgeIcon className="size-4" />
       <span>{title}</span>
     </div>
@@ -113,7 +113,7 @@ const Projects = () => {
           <div
             key={project.title}
             onClick={() => setSelectedProject(project)}
-            className="project-card border-border bg-card-fade-gradient-left cursor-pointer rounded border px-7 pt-6 pb-5 shadow">
+            className="project-card border-border bg-fade-secondary cursor-pointer rounded border px-7 pt-6 pb-5 shadow">
             <div className="mb-2 flex items-center justify-between">
               <h3 className="text-[15px] font-medium">{`Project_${index + 1}`}</h3>
               <Info className="text-muted hover:text-foreground size-5 transition-colors" />
@@ -130,7 +130,7 @@ const Projects = () => {
                 width={287}
               />
               <div className="absolute right-0 bottom-[5%] left-0 text-center">
-                <h4 className="underline-hover relative inline-block font-medium">
+                <h4 className="underline-hover relative inline-block font-medium text-white/70">
                   {project.title}
                 </h4>
               </div>
@@ -175,7 +175,7 @@ const Projects = () => {
             {selectedProject?.techs.map((tech) => (
               <span
                 key={tech}
-                className="bg-fade-gradient-right w-fit rounded-full px-4 py-2 text-sm">
+                className="bg-fade-primary w-fit rounded-full px-4 py-2 text-sm">
                 {tech}
               </span>
             ))}
@@ -197,7 +197,7 @@ const Projects = () => {
 
           <div className="mt-8 flex items-center gap-4">
             <a
-              className="bg-fade-gradient-right hover-reverse-gradient-right border-border flex w-fit items-center gap-1.5 rounded border px-4 py-2 text-sm font-medium"
+              className="bg-fade-primary hover-reverse-gradient-right border-border flex w-fit items-center gap-1.5 rounded border px-4 py-2 text-sm font-medium"
               href={selectedProject?.demoLink}
               target="_blank"
               rel="noopener noreferrer">

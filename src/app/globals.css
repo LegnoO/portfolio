@@ -6,7 +6,7 @@
   --theme-primary: rgb(115, 103, 240);
   --background: rgb(240, 241, 245);
   --foreground: rgb(15, 15, 15);
-  --muted: rgba(80, 80, 80, 0.5);
+  --muted: rgba(15, 15, 15, 0.6);
   --border: rgba(0, 0, 0, 0.1);
   --paper: linear-gradient(
     119deg,
@@ -14,7 +14,30 @@
     rgba(255, 255, 255, 0.11) 100%
   );
 }
+
+.bg-input {
+  box-shadow:
+    1px 1px 3px 0 rgba(174, 174, 192, 0.4),
+    -1px -1px 3px 0 #fff,
+    inset 0 0 0 0px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.85);
+    opacity: 1;
+  }
+  &:hover {
+    box-shadow:
+      2px 2px 6px 0 rgba(174, 174, 192, 0.6),
+      -2px -2px 6px 0 #fff,
+      inset 0 0 0 0 rgba(255, 255, 255, 0.2);
+  }
+}
+
 .dark {
+  --background: rgb(15, 15, 15);
+  --foreground: rgb(210, 210, 210);
+  --muted: rgba(210, 210, 210, 0.65);
+  --border: rgba(255, 255, 255, 0.16);
   .nav {
     border: 1px solid var(--color-border);
     box-shadow: none;
@@ -39,6 +62,18 @@
       }
     }
   }
+  .bg-input {
+    background: linear-gradient(
+      329deg,
+      rgba(0, 0, 0, 0.75) 0%,
+      rgba(78, 78, 78, 0.81) 100%
+    );
+    box-shadow: none;
+    &::placeholder {
+      color: rgba(210, 210, 210, 0.75);
+      opacity: 1;
+    }
+  }
   .shadow-emboss-light {
     box-shadow: none;
     border: 1px solid var(--color-border);
@@ -56,7 +91,7 @@
       rgba(255, 255, 255, 0.14) 100%
     );
   }
-  .bg-fade-gradient-right {
+  .bg-fade-primary {
     border: inherit;
     backdrop-filter: none;
     box-shadow: unset;
@@ -69,7 +104,7 @@
     background-size: 200% 100%;
     transition: background-position 0.4s ease;
   }
-  .bg-fade-gradient-left {
+  /* .bg-fade-gradient-left {
     backdrop-filter: none;
     box-shadow: unset;
     background: linear-gradient(
@@ -79,9 +114,9 @@
     );
     background-size: 100% 200%;
     transition: background-position 0.4s ease;
-  }
+  } */
 
-  .bg-card-fade-gradient-left {
+  .bg-fade-secondary {
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: linear-gradient(to right, #ffffff0d, #ffffff12, #ffffff0d);
     background-size: 200% auto;
@@ -92,11 +127,6 @@
       background-position: right center;
     }
   }
-
-  --background: rgb(15, 15, 15);
-  --foreground: rgb(210, 210, 210);
-  --muted: rgba(210, 210, 210, 0.65);
-  --border: rgba(255, 255, 255, 0.16);
 }
 * {
   scroll-behavior: smooth;
@@ -130,7 +160,7 @@ body {
     inset 0 0 0 0px rgba(255, 255, 255, 0.2);
 }
 
-.bg-fade-gradient-right {
+.bg-fade-primary {
   box-shadow:
     inset 9px 9px 6px 0 rgba(174, 174, 192, 0.2),
     inset -6px -6px 6px 0 rgba(255, 255, 255, 0.7);
@@ -149,7 +179,7 @@ body {
 }
 
 .bg-fade-white,
-.bg-card-fade-gradient-left {
+.bg-fade-secondary {
   box-shadow:
     inset 9px 9px 6px 0 rgba(174, 174, 192, 0.2),
     inset -6px -6px 6px 0 rgba(255, 255, 255, 0.7);

@@ -4,6 +4,7 @@
 import About from "./about";
 import Resume from "./resume";
 import Projects from "./projects";
+import Contact from "./contact";
 
 // ** Hooks
 import { useHash } from "@/hooks/useHash";
@@ -23,7 +24,7 @@ const Content = () => {
       case "#projects":
         return <Projects />;
       case "#contact":
-        return <>Contact</>;
+        return <Contact />;
       default:
         return <About />;
     }
