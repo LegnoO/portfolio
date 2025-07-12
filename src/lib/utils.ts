@@ -20,3 +20,5 @@ export function calculateAge(birthDate: Date): number {
 
   return age;
 }
+
+export const isSSR = typeof window === "undefined";
