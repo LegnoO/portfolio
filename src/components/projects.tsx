@@ -40,7 +40,7 @@ type Project = {
 
 const Badge = ({ icon: BadgeIcon, title }: BadgeProps) => {
   return (
-    <div className="bg-fade-primary flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-sm">
+    <div className="bg-fade-primary flex w-fit items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium">
       <BadgeIcon className="size-4" />
       <span>{title}</span>
     </div>
@@ -55,49 +55,119 @@ const Projects = () => {
       title: "Cook & Recipe",
       role: ["Personal Project", "Front-End Engineer"],
       techs: [
-        "Next.js",
-        "Shadcn UI",
-        "Tailwind",
+        "Next.js 14",
         "TypeScript",
-        "React Query",
+        "Tailwind CSS",
+        "TanStack Query",
+        "Shadcn UI",
         "React Hook Form",
         "Zod",
         "Cloudinary",
+        "Vercel",
       ],
-      description: `Cook & Recipe is a web application that helps users explore, search, and manage cooking recipes. It allows browsing through various dishes, viewing step-by-step instructions, and saving favorite recipes. The interface is clean, responsive, and easy to use across different devices.`,
+      description: `A modern web application built with Next.js for discovering and managing cooking
+recipes. Users can search for recipes, view detailed instructions, save favorites, leave comments
+and ratings. The app features user authentication, a responsive interface, and SEO optimization
+through server-side rendering.`,
       highlights: [
-        "Built dynamic search and filtering for recipes",
-        "Implemented user authentication and profile features",
-        "Designed a responsive UI for desktop and mobile",
-        "Integrated with backend APIs for smooth data handling",
+        "Implemented dynamic recipe search and filtering",
+        "Developed user authentication and profile management",
+        "Designed responsive UI for seamless experience on all devices",
+        "Integrated comment and rating system for user interaction",
+        "Implemented SEO optimization using Next.js features for better search engine performance",
       ],
+      date: "Jun 2024 – Jan 2025",
       image: "/cook-and-recipe.png",
-      demoLink: "#",
-      codeLink: "#",
+      demoLink: "https://cook-and-recipe-client.vercel.app",
+      codeLink: "https://github.com/LegnoO/cook-and-recipe-client",
     },
     {
+      date: "Jun 2024 – Jan 2025",
       title: "Cook & Recipe Manager",
       role: ["Personal Project", "Front-End Engineer"],
       techs: [
-        "Next.js",
-        "Shadcn UI",
-        "Tailwind",
+        "React 18",
         "TypeScript",
-        "React Query",
+        "Axios",
+        "TanStack Query",
+        "Material UI 5",
         "React Hook Form",
+        "Yup",
         "Zod",
-        "Cloudinary",
+        "Vercel",
       ],
-      description: `Cook & Recipe is a web application that helps users explore, search, and manage cooking recipes. It allows browsing through various dishes, viewing step-by-step instructions, and saving favorite recipes. The interface is clean, responsive, and easy to use across different devices.`,
+      description: `Developed a web-based admin dashboard for managing cooking recipes,
+ingredients, categories, users, employees, and chefs. The system provides a modern,
+intuitive interface for administrators to efficiently perform CRUD operations, monitor statistics,
+and manage all aspects of recipe data.`,
       highlights: [
-        "Built dynamic search and filtering for recipes",
-        "Implemented user authentication and profile features",
-        "Designed a responsive UI for desktop and mobile",
-        "Integrated with backend APIs for smooth data handling",
+        "Recipe management: add, edit, review, and approve recipes",
+        "Category, ingredient, and chef management",
+        "User and employee management with detail and update views",
+        "Role-based access control and group assignment",
+        "Authentication and authorization for admin access",
+        "Dashboard with charts and statistics (recipes, users, categories, chefs)",
+        "Responsive, user-friendly interface with notifications and loading indicators",
+        "Theme switching (Light/Dark mode)",
       ],
       image: "/cook-and-recipe-admin.png",
-      demoLink: "#",
-      codeLink: "#",
+      demoLink: "https://cook-and-recipe-admin.vercel.app",
+      codeLink: "https://github.com/LegnoO/cook-and-recipe-admin",
+    },
+    {
+      date: "May 2023 – June 2023",
+      title: "Queueing System",
+      role: ["Company Project", "Front-End Engineer"],
+      techs: [
+        "React.js",
+        "TypeScript",
+        "Bootstrap 5",
+        "Redux Toolkit",
+        "FireStore",
+        "Material UI 5",
+      ],
+      description: `A web-based queue management system designed to optimize customer service
+processes at transaction points. The system allows for ticket issuance, real-time
+queue monitoring, and customer information management.`,
+      highlights: [
+        "Developed the user interface strictly following the company’s Figma design",
+        "Independently set up and integrated Firebase Firestore as the backend for data storage and real-time updates",
+        "Integrated and utilized Redux Toolkit for state management",
+        "Translated Figma prototypes into responsive and interactive web pages",
+        "Optimized user experience (UX/UI) and ensured cross-device compatibility",
+        "Conducted UI testing and fixed interface-related bugs.",
+      ],
+      image: "/queueing-system.jpeg",
+      demoLink: "https://queueing-system-khaki.vercel.app",
+      codeLink: "https://github.com/LegnoO/queueing-system",
+    },
+
+    {
+      date: "April 2023 - May 2023",
+      title: "CMS Ticket Sales",
+      role: ["Company Project", "Front-End Engineer"],
+      techs: [
+        "React.js",
+        "TypeScript",
+        "Redux Toolkit",
+        "FireStore",
+        "Material UI 5",
+        "SCSS modules",
+      ],
+      description: `Developed a comprehensive event ticket management system (CMS Ticket Sales) using ReactJS. Built modern, responsive user interfaces, optimized user experience, managed application state with Redux, and integrated Firebase services for authentication and data storage.`,
+      highlights: [
+        "Developed the user interface strictly following the company’s Figma design",
+        "Independently set up and integrated Firebase Firestore as the backend for data storage and real-time updates",
+        "Integrated and utilized Redux Toolkit for state management",
+        "Translated Figma prototypes into responsive and interactive web pages",
+        "Optimized user experience (UX/UI) and ensured cross-device compatibility",
+        "Conducted UI testing and fixed interface-related bugs.",
+        "Implemented data export to Excel functionality.",
+        "Used SCSS modules for consistent and maintainable styling.",
+      ],
+      image: "/ticket-sales.jpeg",
+      demoLink: "https://cms-ticket-sales.vercel.app",
+      codeLink: "https://github.com/LegnoO/CMS-Ticket-Sales",
     },
   ];
 
@@ -109,13 +179,13 @@ const Projects = () => {
         </h2>
       </header>
       <div role="list" className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {projects.map((project, index) => (
+        {projects.map((project) => (
           <div
             key={project.title}
             onClick={() => setSelectedProject(project)}
             className="project-card border-border bg-fade-secondary cursor-pointer rounded border px-7 pt-6 pb-5 shadow">
             <div className="mb-2 flex items-center justify-between">
-              <h3 className="text-[15px] font-medium">{`Project_${index + 1}`}</h3>
+              <h3 className="text-[15px] font-medium">{project.date}</h3>
               <Info className="text-muted hover:text-foreground size-5 transition-colors" />
             </div>
 
@@ -175,7 +245,7 @@ const Projects = () => {
             {selectedProject?.techs.map((tech) => (
               <span
                 key={tech}
-                className="bg-fade-primary w-fit rounded-full px-4 py-2 text-sm">
+                className="bg-fade-primary w-fit rounded-full px-4 py-2 text-sm font-medium">
                 {tech}
               </span>
             ))}

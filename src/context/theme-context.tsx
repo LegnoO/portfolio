@@ -43,6 +43,10 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     return "light";
   });
 
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e: MediaQueryListEvent) => {
@@ -58,10 +62,6 @@ const ThemeProvider = ({ children }: { children: ReactNode }) => {
     document.documentElement.classList.remove("light", "dark");
     document.documentElement.classList.add(theme);
   }, [theme, setStorageMode]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
-  };
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

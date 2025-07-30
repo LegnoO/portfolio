@@ -18,11 +18,12 @@ const menuItems = [
   { icon: <FolderKanban />, label: "Projects" },
   { icon: <Send />, label: "Contact" },
 ];
+
 const Sidebar = () => {
   const [hash, setHash] = useHash();
 
   return (
-    <div className="fixed h-screen w-[78px]">
+    <div className="fixed hidden h-screen w-[78px] sm:block">
       <ul className="nav flex flex-col rounded">
         {menuItems.map(({ icon, label }) => {
           const hashItems = `#${label.toLowerCase()}` as HashSection;

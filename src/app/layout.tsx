@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} antialiased`}>
-        <main>
+        <main className="pb-8">
           <ThemeContext>
             <FlowLineBackground />
             {children}

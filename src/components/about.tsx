@@ -20,10 +20,7 @@ const cardContainerClass =
 
 const InfoCard = ({ icon, label, value, description }: InfoCardProps) => (
   <div
-    className={cn(
-      cardContainerClass,
-      "flex flex-1 items-center justify-center font-medium",
-    )}>
+    className={cn(cardContainerClass, "flex flex-1 items-center font-medium")}>
     <div className="flex items-center justify-center gap-6">
       {icon}
       <div>
@@ -87,7 +84,7 @@ export default function About() {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {infoItems.map((item, index) => (
           <InfoCard key={index} {...item} />
         ))}

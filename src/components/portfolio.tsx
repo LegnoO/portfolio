@@ -46,13 +46,13 @@ const Portfolio = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 20 }}
           transition={{ duration: 0.4 }}>
-          <div className="border-border rounded pb-12">
+          <div className="border-border rounded md:pb-12">
             <div className="before:bg-primary relative overflow-hidden before:absolute before:bottom-[-50px] before:left-[-50px] before:size-[150px] before:rounded-full before:opacity-90 before:blur-[30px] before:content-['']">
               <Image
                 height={200}
                 width={300}
                 priority
-                className="pointer-events-none h-[440px] w-full rounded rounded-b-none"
+                className="pointer-events-none h-full w-full rounded rounded-b-none md:h-[440px]"
                 src="/avatar.jpg"
                 alt="Ngô Minh Khôi Avatar"
               />

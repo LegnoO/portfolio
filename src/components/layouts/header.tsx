@@ -2,15 +2,16 @@
 
 // ** Components
 import IconButton from "@/components/icon-button";
+import MenuDrawer from "@/components/menu-drawer";
+
+// ** Icons
+import { Sun, Moon } from "lucide-react";
 
 // ** Context
 import { useTheme } from "@/context/theme-context";
 
-// ** Hoks
+// ** Hooks
 import useIsMounted from "@/hooks/useIsMounted";
-
-// ** Icons
-import { Sun, Moon } from "lucide-react";
 
 const Header = () => {
   const isMounted = useIsMounted();
@@ -20,16 +21,20 @@ const Header = () => {
     <div className="header">
       <div className="container">
         <div className="border-border border-b py-4">
-          <ul className="flex items-center justify-between">
-            <li className="text-3xl">
-              <a>Devon</a>
-            </li>
-            <li onClick={() => toggleTheme()}>
+          <div className="flex items-center justify-between">
+            <a className="text-3xl">Devon</a>
+
+            <div role="list" className="flex items-center gap-2">
               {isMounted && (
-                <IconButton icon={theme === "light" ? Sun : Moon} />
+                <IconButton
+                  onClick={() => toggleTheme()}
+                  icon={theme === "light" ? Sun : Moon}
+                />
               )}
-            </li>
-          </ul>
+
+              <MenuDrawer />
+            </div>
+          </div>
         </div>
       </div>
     </div>

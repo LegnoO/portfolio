@@ -5,17 +5,10 @@ import { InputHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
-  fullWidth?: boolean;
   isTextfield?: boolean;
 };
 
-const input = ({
-  placeholder,
-  isTextfield,
-  fullWidth = false,
-  className,
-  ...rest
-}: Props) => {
+const input = ({ placeholder, isTextfield, className, ...rest }: Props) => {
   if (isTextfield)
     return (
       <textarea
@@ -29,11 +22,7 @@ const input = ({
       placeholder={placeholder || ""}
       type="text"
       className={cn(
-        "text-foreground bg-input rounded border-none px-7 py-5 text-sm font-medium outline-none",
-        {
-          "flex-1": fullWidth,
-          "flex-1/2": !fullWidth,
-        },
+        "text-foreground bg-input flex-1 rounded border-none px-7 py-5 text-sm font-medium outline-none",
         className,
       )}
       {...rest}
