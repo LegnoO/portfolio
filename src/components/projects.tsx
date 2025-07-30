@@ -183,7 +183,7 @@ queue monitoring, and customer information management.`,
           <div
             key={project.title}
             onClick={() => setSelectedProject(project)}
-            className="project-card border-border bg-fade-secondary cursor-pointer rounded border px-7 pt-6 pb-5 shadow">
+            className="!border-border bg-fade-secondary cursor-pointer rounded !border px-7 pt-6 pb-5">
             <div className="mb-2 flex items-center justify-between">
               <h3 className="text-[15px] font-medium">{project.date}</h3>
               <Info className="text-muted hover:text-foreground size-5 transition-colors" />
@@ -276,7 +276,7 @@ queue monitoring, and customer information management.`,
             </a>
 
             <a
-              className="shadow-emboss-light hover:bg-foreground/10 flex w-fit items-center gap-1.5 rounded px-4 py-2 text-sm font-medium transition-colors"
+              className="shadow-emboss-light flex w-fit items-center gap-1.5 rounded px-4 py-2 text-sm font-medium transition-colors"
               href={selectedProject?.codeLink}
               target="_blank"
               rel="noopener noreferrer">

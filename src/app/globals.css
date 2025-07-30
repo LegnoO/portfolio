@@ -18,18 +18,18 @@
 
 .bg-input {
   box-shadow:
-    1px 1px 3px 0 rgba(174, 174, 192, 0.4),
-    -1px -1px 3px 0 #fff,
+    2px 2px 4px 0 rgba(174, 174, 192, 0.4),
+    -2px -2px 4px 0 #fff,
     inset 0 0 0 0px rgba(255, 255, 255, 0.2);
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease;
   &::placeholder {
     color: rgba(0, 0, 0, 0.85);
     opacity: 1;
   }
   &:hover {
     box-shadow:
-      2px 2px 6px 0 rgba(174, 174, 192, 0.6),
-      -2px -2px 6px 0 #fff,
+      3px 3px 8px 0 rgba(174, 174, 192, 0.6),
+      -3px -3px 8px 0 #fff,
       inset 0 0 0 0 rgba(255, 255, 255, 0.2);
   }
 }
@@ -78,6 +78,11 @@
   .shadow-emboss-light {
     box-shadow: none;
     border: 1px solid var(--color-border);
+
+    &:hover {
+      background-color: color-mix(in oklab, var(--foreground) 10%, transparent);
+      box-shadow: none;
+    }
   }
   .paper-background {
     background: var(--paper);
@@ -156,9 +161,17 @@ body {
 
 .shadow-emboss-light {
   box-shadow:
-    1px 1px 3px 0 rgba(174, 174, 192, 0.4),
-    -1px -1px 3px 0 #fff,
+    2px 2px 4px 0 rgba(174, 174, 192, 0.4),
+    -2px -2px 4px 0 #fff,
     inset 0 0 0 0px rgba(255, 255, 255, 0.2);
+
+  transition: box-shadow 0.2s ease;
+  &:hover {
+    box-shadow:
+      4px 4px 8px 0 rgba(174, 174, 192, 0.4),
+      -4px -4px 8px 0 #fff,
+      inset 0 0 0 0px rgba(255, 255, 255, 0.2);
+  }
 }
 
 .bg-fade-primary {

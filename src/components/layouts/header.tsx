@@ -24,7 +24,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             <a className="text-3xl">Devon</a>
 
-            <div role="list" className="flex items-center gap-2">
+            <div role="list" className="flex items-center gap-3">
               {isMounted && (
                 <IconButton
                   onClick={() => toggleTheme()}

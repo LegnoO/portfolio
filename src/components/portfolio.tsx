@@ -20,12 +20,12 @@ const socialLinks = [
   {
     name: "Facebook",
     icon: FacebookIcon,
-    href: "https://www.facebook.com/legnooo/",
+    href: "https://www.facebook.com/legnooo",
   },
   {
     name: "LinkedIn",
     icon: LinkedinIcon,
-    href: "https://www.linkedin.com/in/minh-kh%C3%B4i-ng%C3%B4-45ba8123a/",
+    href: "https://www.linkedin.com/in/minh-kh%C3%B4i-ng%C3%B4-45ba8123a",
   },
   {
     name: "GitHub",
@@ -76,7 +76,7 @@ const Portfolio = () => {
               </ul>
               <button
                 onClick={() => setIsShowCV(true)}
-                className="shadow-emboss-light hover:bg-foreground/10 mt-12 w-full cursor-pointer rounded px-4 py-1.5 text-sm font-medium transition-colors">
+                className="shadow-emboss-light mt-12 w-full cursor-pointer rounded px-4 py-1.5 text-sm font-medium transition-colors">
                 My Resume
               </button>
             </div>
